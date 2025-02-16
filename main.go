@@ -10,7 +10,7 @@ import (
 
 func main() {
 	mux := http.NewServeMux()
-	mux.HandleFunc("/events/{id}", eventsHandler)
+	mux.HandleFunc("GET /events/{id}", eventsHandler)
 
 	go func() {
 		http.ListenAndServe(":8080", mux)
